@@ -1,0 +1,10 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: carreview-db
+    environment:
+      POSTGRES_DB: carreview
+      POSTGRES_USER: pedro
+      POSTGRES_PASSWORD: 123456
+    ports:
+      - "5432:5432"
