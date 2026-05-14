@@ -11,18 +11,16 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class UserService {
-    private final UserRepository userRepository;
+  private final UserRepository userRepository;
 
-    public User save(User user){
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
-        return userRepository.save(user);
-    }
+  public User save(User user) {
+    user.setPassword(passwordEncoder.encode(user.getPassword()));
+    return userRepository.save(user);
+  }
 
-    public List<User> findAll(){
-        return userRepository.findAll();
-    }
+  public List<User> findAll() {
+    return userRepository.findAll();
+  }
 
-    private final PasswordEncoder passwordEncoder;
-
-
+  private final PasswordEncoder passwordEncoder;
 }
